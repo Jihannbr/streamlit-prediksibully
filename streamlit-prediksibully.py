@@ -67,6 +67,7 @@ if pilihanmenu == "Beranda":
 
 if pilihanmenu == "Tentang":
     st.subheader('Tentang Aplikasi')
+    st.image('stopbully.jpg', caption='Ilustrasi Bullying', use_column_width=True)
     st.write("""
     **Bullying** adalah tindakan agresif yang dilakukan secara sengaja dan berulang-ulang oleh seseorang atau kelompok untuk menyakiti, 
     mengancam, atau merendahkan individu lain. Bullying dapat terjadi dalam berbagai bentuk, seperti fisik, verbal, sosial, atau bahkan cyberbullying.
