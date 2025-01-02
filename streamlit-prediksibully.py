@@ -80,6 +80,7 @@ if pilihanmenu == "Kontak":
     st.subheader('Hubungi Kami')
     st.write("""
     Jika Anda memiliki pertanyaan atau memerlukan bantuan, silakan hubungi kami melalui:
+    - **Nomor Darurat Indonesia**: 112
     - **Nomor Telepon**: 0812-34xx-xx0
     - **Email**: support@bullyingprediction.com
     """)
