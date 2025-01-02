@@ -11,7 +11,7 @@ pilihanmenu = st.sidebar.radio("Navigasi", ['Beranda', 'Tentang', 'Kontak'])
 
 # Judul dan deskripsi aplikasi
 if pilihanmenu == "Beranda":
-    st.title('Aplikasi Prediksi Bullying di Sekolah')
+    st.title('Aplikasi Prediksi Bullying')
     st.write("""
     Aplikasi ini digunakan untuk memprediksi risiko bullying di sekolah berdasarkan data yang dimasukkan. 
     Silakan isi formulir berikut untuk melakukan prediksi.
