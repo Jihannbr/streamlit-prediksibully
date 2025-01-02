@@ -2,12 +2,22 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
+from streamlit_option_menu import option_menu
 
 # Muat model
 with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
+#navbar
+selected = option_menu(
+  menu_title="Navigasi",
+  options=["Beranda", "Tentang", "Kontak"],
+  default_index=0,
+  orientation="horizontal",
+)
+
 # Judul dan deskripsi aplikasi
+if selected == "Beranda":
 st.title('Aplikasi Prediksi Bullying di Sekolah')
 st.write("""
 Aplikasi ini digunakan untuk memprediksi risiko bullying di sekolah berdasarkan data yang dimasukkan. 
@@ -66,3 +76,21 @@ if st.button('Prediksi'):
     result = 'Berisiko' if prediction[0] == 1 else 'Tidak Berisiko'
     st.subheader('Hasil Prediksi')
     st.write(f"Hasil: **{result}**")
+
+if selected == "Tentang":
+    st.subheader('Tentang Aplikasi')
+    st.write("""
+    **Bullying** adalah tindakan agresif yang dilakukan secara sengaja dan berulang-ulang oleh seseorang atau kelompok untuk menyakiti, 
+    mengancam, atau merendahkan individu lain. Bullying dapat terjadi dalam berbagai bentuk, seperti fisik, verbal, sosial, atau bahkan cyberbullying.
+
+    Aplikasi ini bertujuan untuk membantu memprediksi risiko bullying di sekolah berdasarkan data yang diinputkan, sehingga 
+    pihak sekolah atau orang tua dapat mengambil langkah preventif untuk mencegah terjadinya bullying.
+    """)
+
+if selected == "Kontak":
+    st.subheader('Hubungi Kami')
+    st.write("""
+    Jika Anda memiliki pertanyaan atau memerlukan bantuan, silakan hubungi kami melalui:
+    - **Nomor Telepon**: 0812-34xx-xx0
+    - **Email**: support@bullyingprediction.com
+    """)
