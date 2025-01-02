@@ -2,22 +2,15 @@ import streamlit as st
 import pickle
 import pandas as pd
 import numpy as np
-from streamlit_option_menu import option_menu
 
 # Muat model
 with open('model.pkl', 'rb') as file:
     model = pickle.load(file)
 
-#navbar
-selected = option_menu(
-  menu_title="Navigasi",
-  options=["Beranda", "Tentang", "Kontak"],
-  default_index=0,
-  orientation="horizontal",
-)
+pilihanmenu = st.sidebar.radio("Navigasi", ['Beranda', 'Tentang', 'Kontak'])
 
 # Judul dan deskripsi aplikasi
-if selected == "Beranda":
+if pilihanmenu == "Beranda":
     st.title('Aplikasi Prediksi Bullying di Sekolah')
     st.write("""
     Aplikasi ini digunakan untuk memprediksi risiko bullying di sekolah berdasarkan data yang dimasukkan. 
@@ -72,7 +65,7 @@ if selected == "Beranda":
         st.subheader('Hasil Prediksi')
         st.write(f"Hasil: **{result}**")
 
-if selected == "Tentang":
+if pilihanmenu == "Tentang":
     st.subheader('Tentang Aplikasi')
     st.write("""
     **Bullying** adalah tindakan agresif yang dilakukan secara sengaja dan berulang-ulang oleh seseorang atau kelompok untuk menyakiti, 
@@ -82,7 +75,7 @@ if selected == "Tentang":
     pihak sekolah atau orang tua dapat mengambil langkah preventif untuk mencegah terjadinya bullying.
     """)
 
-if selected == "Kontak":
+if pilihanmenu == "Kontak":
     st.subheader('Hubungi Kami')
     st.write("""
     Jika Anda memiliki pertanyaan atau memerlukan bantuan, silakan hubungi kami melalui:
