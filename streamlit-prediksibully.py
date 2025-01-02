@@ -83,4 +83,5 @@ if pilihanmenu == "Kontak":
     - **Nomor Darurat Indonesia**: 112
     - **Nomor Telepon**: 0812-34xx-xx0
     - **Email**: support@bullyingprediction.com
+    - **Nomor Darurat Indonesia**: 112
     """)
